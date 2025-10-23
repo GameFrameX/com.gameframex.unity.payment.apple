@@ -1,0 +1,17 @@
+{
+  "name": "GameFrameX.Payment.Apple.Runtime",
+  "rootNamespace": "GameFrameX.Payment.Apple.Runtime",
+  "references": [
+    "GameFrameX.Runtime",
+    "GameFrameX.Payment.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
