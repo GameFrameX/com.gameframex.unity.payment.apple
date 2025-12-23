@@ -10,7 +10,7 @@
   ],
   "repository": {
     "name": "com.gameframex.unity.payment.apple",
-    "url": "https://github.com/gameframex/com.gameframex.unity.payment.apple.git",
+    "url": "git+https://github.com/gameframex/com.gameframex.unity.payment.apple.git",
     "type": "git"
   },
   "author": {
