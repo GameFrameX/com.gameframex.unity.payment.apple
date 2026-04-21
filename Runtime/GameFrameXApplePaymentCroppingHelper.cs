@@ -10,6 +10,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         void Start()
         {
             _ = typeof(GameFrameX.Payment.Apple.Runtime.ApplePaymentManager);
+            _ = typeof(GameFrameX.Payment.Apple.Runtime.ApplePurchaseParams);
             _ = typeof(GameFrameX.Payment.Apple.Runtime.ApplePayStoreKit);
             _ = typeof(GameFrameX.Payment.Apple.Runtime.GameFrameXApplePaymentCroppingHelper);
             _ = typeof(GameFrameX.Payment.Apple.Runtime.PurchaseInfo);
