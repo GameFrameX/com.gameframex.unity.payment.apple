@@ -56,7 +56,7 @@ namespace GameFrameX.Payment.Apple.Runtime
 
         /// <summary>
         /// 支付模式
-        /// 0=免费试用，1=预付费，2=按期付费
+        /// 0=免费试用，1=按期付费，2=预付费
         /// </summary>
         [Preserve]
         public int PaymentMode { get; set; }

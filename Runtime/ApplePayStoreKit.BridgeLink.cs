@@ -93,8 +93,8 @@ namespace GameFrameX.Payment.Apple.Runtime
         #region 消息处理
 
         /// <summary>
-        /// 接收来自Android的消息
-        /// 此方法由Android端通过UnitySendMessage调用
+        /// 接收来自 iOS 的消息
+        /// 此方法由 iOS 原生端通过 UnitySendMessage 调用
         /// </summary>
         /// <param name="message">消息内容，格式为 "消息代码|消息内容"</param>
         [Preserve]
@@ -134,13 +134,13 @@ namespace GameFrameX.Payment.Apple.Runtime
                 // 初始化相关
                 case InitSuccess:
                     _isInitialized = true;
-                    Debug.Log("Google Play Billing 初始化成功: " + messageContent);
+                    Debug.Log("Apple StoreKit 初始化成功: " + messageContent);
                     OnInitialized?.Invoke(true, messageContent);
                     break;
 
                 case InitFail:
                     _isInitialized = false;
-                    Debug.LogError("Google Play Billing 初始化失败: " + messageContent);
+                    Debug.LogError("Apple StoreKit 初始化失败: " + messageContent);
                     OnInitialized?.Invoke(false, messageContent);
                     break;
 
@@ -231,7 +231,7 @@ namespace GameFrameX.Payment.Apple.Runtime
                     return products;
                 }
 
-                return Utility.Json.ToObject<List<SKProductInfo>>(json);
+                return Utility.Json.ToObject<List<SKProductInfo>>(json) ?? products;
             }
             catch (Exception e)
             {
@@ -276,7 +276,7 @@ namespace GameFrameX.Payment.Apple.Runtime
                     return purchases;
                 }
 
-                purchases = Utility.Json.ToObject<List<PurchaseInfo>>(json);
+                purchases = Utility.Json.ToObject<List<PurchaseInfo>>(json) ?? purchases;
             }
             catch (Exception e)
             {
