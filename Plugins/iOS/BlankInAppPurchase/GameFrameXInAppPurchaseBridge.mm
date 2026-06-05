@@ -8,6 +8,20 @@
 
 #import <GameFrameXViewController.h>
 
+// Forward declarations for StoreKit 2 functions
+extern "C" void __gfx_sk2_set_pre_defined_product_ids(char *inAppProductIdString, char *subProductIdString);
+extern "C" void __gfx_sk2_init(char *isDebug, char *isClientVerify);
+extern "C" char * __gfx_sk2_isReady();
+extern "C" void __gfx_sk2_buy(char *productId, char *paymentType, char *obfuscatedAccountId, char *offerToken, char *obfuscatedProfileId);
+extern "C" void __gfx_sk2_consume(char *purchaseToken);
+extern "C" void __gfx_sk2_query_purchases(char *paymentType);
+extern "C" void __gfx_sk2_restore();
+
+static bool useStoreKit2() {
+    if (@available(iOS 15.0, *)) { return true; }
+    return false;
+}
+
 GameFrameXViewController * instance;
 
 // 合并一次性购买商品和订阅商品的ID
@@ -16,6 +30,10 @@ NSMutableArray *allProductIds;
 // 查询购买记录
 extern "C" void __gfx_iap_query_purchases(char * paymentType) {
     NSLog(@"__gfx_iap_query_purchases called with paymentType: %s", paymentType);
+    if (useStoreKit2()) {
+        __gfx_sk2_query_purchases(paymentType);
+        return;
+    }
     // iOS内购系统通过恢复购买来获取已购买的永久性商品
     // 对于消费型商品，iOS不保存购买记录
     if (instance != nil) {
@@ -29,14 +47,21 @@ extern "C" void __gfx_iap_query_purchases(char * paymentType) {
 
 // 消费已购买的商品
 extern "C" void __gfx_iap_consume(char * purchaseToken) {
-    // iOS内购系统中消费型商品购买后自动消费，这里主要用于日志记录
     NSLog(@"__gfx_iap_consume called with purchaseToken: %s", purchaseToken);
+    if (useStoreKit2()) {
+        __gfx_sk2_consume(purchaseToken);
+        return;
+    }
     // iOS不需要手动消费，购买完成后自动处理
 }
 
 // 初始化
 extern "C" void __gfx_iap_init(char * isDebug, char * isClientVerify) {
     NSLog(@"__gfx_iap_init called");
+    if (useStoreKit2()) {
+        __gfx_sk2_init(isDebug, isClientVerify);
+        return;
+    }
     // 将字符串转换为BOOL类型
     NSString * isDebugString = [NSString stringWithUTF8String:isDebug];
     // 沙盒模式标记
@@ -60,6 +85,9 @@ extern "C" void __gfx_iap_init(char * isDebug, char * isClientVerify) {
 
 // 是否准备好支付系统,返回bool字符串
 extern "C" char * __gfx_iap_isReady() {
+    if (useStoreKit2()) {
+        return __gfx_sk2_isReady();
+    }
     BOOL isReady =YES;
     if (instance==nil) {
         isReady = NO;
@@ -77,6 +105,10 @@ extern "C" char * __gfx_iap_isReady() {
 // 发起购买
 extern "C" void __gfx_iap_buy(char * productId, char * paymentType, char * obfuscatedAccountId, char * offerToken, char * obfuscatedProfileId) {
     NSLog(@"__gfx_iap_buy called with productId: %s, paymentType: %s", productId, paymentType);
+    if (useStoreKit2()) {
+        __gfx_sk2_buy(productId, paymentType, obfuscatedAccountId, offerToken, obfuscatedProfileId);
+        return;
+    }
     if (instance == nil) {
         NSLog(@"没有初始化IAP服务");
         return;
@@ -94,6 +126,10 @@ extern "C" void __gfx_iap_buy(char * productId, char * paymentType, char * obfus
 // 设置预加载的sku列表
 extern "C" void __gfx_iap_set_pre_defined_product_ids(char * inAppProductIdString, char * subProductIdString) {
     NSLog(@"__gfx_iap_set_pre_defined_product_ids called");
+    if (useStoreKit2()) {
+        __gfx_sk2_set_pre_defined_product_ids(inAppProductIdString, subProductIdString);
+        return;
+    }
     
     allProductIds = [NSMutableArray array];
     
@@ -123,6 +159,10 @@ extern "C" void __gfx_iap_set_pre_defined_product_ids(char * inAppProductIdStrin
 // 恢复已经购买的商品(仅限永久性商品)
 extern "C" void __gfx_iap_restore() {
     NSLog(@"__gfx_iap_restore called");
+    if (useStoreKit2()) {
+        __gfx_sk2_restore();
+        return;
+    }
     if (instance == nil) {
         NSLog(@"没有初始化IAP服务");
         return;
