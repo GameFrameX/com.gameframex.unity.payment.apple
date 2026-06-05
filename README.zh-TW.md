@@ -114,4 +114,4 @@ billingManager.QueryPurchases("subs");
 
 ## 開源協議
 
-本專案基於 MIT 協議開源，詳見 [LICENSE.md](LICENSE.md) 檔案。
+詳見 [LICENSE.md](LICENSE.md) 檔案。

@@ -114,4 +114,4 @@ billingManager.QueryPurchases("subs");
 
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스에 따라 배포됩니다. 자세한 내용은 [LICENSE.md](LICENSE.md) 파일을 참조하세요.
+자세한 내용은 [LICENSE.md](LICENSE.md) 파일을 참조하세요.
