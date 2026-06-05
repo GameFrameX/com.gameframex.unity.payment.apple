@@ -8,6 +8,9 @@
   "keywords": [
     "Game Framework X"
   ],
+  "documentationUrl": "https://gameframex.doc.alianblank.com",
+  "changelogUrl": "https://github.com/GameFrameX/com.gameframex.unity.payment.apple/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/GameFrameX/com.gameframex.unity.payment.apple/blob/main/LICENSE.md",
   "repository": {
     "name": "com.gameframex.unity.payment.apple",
     "url": "git+https://github.com/gameframex/com.gameframex.unity.payment.apple.git",
