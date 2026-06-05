@@ -175,6 +175,18 @@ namespace GameFrameX.Payment.Apple.Runtime
 #if UNITY_IOS && !UNITY_EDITOR
             try
             {
+                if (string.IsNullOrEmpty(productId))
+                {
+                    Debug.LogError("商品ID不能为空");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(obfuscatedAccountId))
+                {
+                    Debug.LogError("订单号不能为空");
+                    return;
+                }
+
                 // 检查商品类型是否合法
                 if (string.IsNullOrEmpty(productType))
                 {
@@ -190,7 +202,7 @@ namespace GameFrameX.Payment.Apple.Runtime
 
                 Debug.Log($"拉起购买 - 商品ID: {productId}, 商品类型: {productType}, 混淆的账户ID: {obfuscatedAccountId}, 订阅优惠令牌: {offerToken}, 混淆的配置文件ID: {obfuscatedProfileId}");
                 __gfx_iap_buy(productId, productType, obfuscatedAccountId, offerToken, obfuscatedProfileId);
-                Debug.Log($"拉起购买成功");
+                Debug.Log("已发起购买请求");
             }
             catch (Exception e)
             {
@@ -235,6 +247,12 @@ namespace GameFrameX.Payment.Apple.Runtime
 #if UNITY_IOS && !UNITY_EDITOR
             try
             {
+                if (string.IsNullOrEmpty(purchaseToken))
+                {
+                    Debug.LogError("购买令牌不能为空");
+                    return;
+                }
+
                 __gfx_iap_consume(purchaseToken);
             }
             catch (Exception e)
@@ -277,16 +295,8 @@ namespace GameFrameX.Payment.Apple.Runtime
 #if UNITY_IOS && !UNITY_EDITOR
             try
             {
-                if (isDebug)
-                {
-                    Debug.Log("Apple Pay Store Kit 初始化 - 沙盒模式");
-                    __gfx_iap_init(true.ToString(), isClientVerify.ToString());
-                }
-                else
-                {
-                    Debug.Log("Apple Pay Store Kit 初始化 - 正式模式");
-                    __gfx_iap_init(false.ToString(), isClientVerify.ToString());
-                }
+                Debug.Log($"Apple Pay StoreKit 初始化 - {(isDebug ? "沙盒模式" : "正式模式")}");
+                __gfx_iap_init(isDebug.ToString(), isClientVerify.ToString());
             }
             catch (Exception e)
             {
