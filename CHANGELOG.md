@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.0.0...1.0.1) (2026-06-05)
+
+
+### Bug Fixes
+
+* **payment:** 修正残留注释和枚举文档错误 ([68b752c](https://github.com/gameframex/com.gameframex.unity.payment.apple/commit/68b752cd6018af6830253e8cf9362414723a30c6))
+* **payment:** 补充参数校验、修正日志并简化代码 ([785f552](https://github.com/gameframex/com.gameframex.unity.payment.apple/commit/785f552d57a515da8b0c5b7444e61a0068e7f04c))
+
 # 1.0.0 (2026-05-25)
 
 
