@@ -123,5 +123,9 @@ extern "C" void __gfx_iap_set_pre_defined_product_ids(char * inAppProductIdStrin
 // 恢复已经购买的商品(仅限永久性商品)
 extern "C" void __gfx_iap_restore() {
     NSLog(@"__gfx_iap_restore called");
+    if (instance == nil) {
+        NSLog(@"没有初始化IAP服务");
+        return;
+    }
     [instance restoreProduct];
 }
