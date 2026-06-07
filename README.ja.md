@@ -20,6 +20,7 @@
 [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | **日本語** | [한국어](README.ko.md)
 
 </div>
+
 ## プロジェクト概要
 
 このプラグインは、Unity アプリケーションに Apple App Store のアプリ内課金機能を統合するためのシンプルで使いやすい API を提供します。StoreKit の複雑さをカプセル化し、統一されたインターフェースを提供することで、開発者が以下の機能を簡単に実装できるようにします：
