@@ -19,7 +19,6 @@
 [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | **한국어**
 
 </div>
-
 ## 프로젝트 개요
 
 이 플러그인은 Unity 애플리케이션에 Apple App Store 인앱 결제 기능을 통합하기 위한 간단하고 사용하기 쉬운 API를 제공합니다. StoreKit의 복잡성을 캡슐화하고 통합된 인터페이스를 제공하여 개발자가 다음 기능을 쉽게 구현할 수 있도록 합니다:

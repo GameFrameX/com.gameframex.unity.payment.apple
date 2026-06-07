@@ -19,7 +19,6 @@
 [English](README.md) | [简体中文](README.zh-CN.md) | **繁體中文** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 </div>
-
 ## 項目簡介
 
 本插件提供了一套簡單易用的 API，用於在 Unity 應用中整合 Apple App Store 應用內支付功能。它封裝了 StoreKit 的複雜性，提供了統一的介面，使開發者能夠輕鬆實現以下功能：
