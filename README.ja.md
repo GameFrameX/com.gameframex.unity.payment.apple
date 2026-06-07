@@ -123,6 +123,20 @@ billingManager.QueryPurchases("subs");
 
 詳細は [CHANGELOG.md](CHANGELOG.md) をご覧ください。
 
+
+## 依存関係
+
+| パッケージ | 説明 |
+|----------|------|
+| `com.gameframex.unity` | 1.1.1 |
+
+## ドキュメントとリソース
+
+- [ドキュメント](https://gameframex.doc.alianblank.com)
+
+## コミュニティとサポート
+
+- QQグループ: 467608841 / 233840761
 ## ライセンス
 
 詳しくは [LICENSE.md](LICENSE.md) をご参照ください。
