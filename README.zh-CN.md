@@ -33,26 +33,36 @@
 
 ## 快速开始
 
-### 1. 导入插件
+### 安装
 
-将 `GameFrameX.Payment.Apple` 插件导入到您的 Unity 项目中。
+编辑 Unity 项目的 `Packages/manifest.json`，添加 `scopedRegistries` 部分：
 
-### 2. 在 Unity 中使用
-
-在您的游戏场景中添加 `ApplePaymentManager` 组件，或者通过代码动态创建：
-
-```csharp
-// 获取 ApplePaymentManager 实例
-var billingManager = GameFrameX.Payment.PaymentModule.GetPaymentManager<ApplePaymentManager>();
-
-// 注册事件监听
-billingManager.OnInitialized += OnInitialized;
-billingManager.OnProductsQueried += OnProductsQueried;
-billingManager.OnPurchaseCompleted += OnPurchaseCompleted;
-
-// 初始化
-billingManager.Init();
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes` 控制哪些包通过此注册表解析。只有以 `com.gameframex` 开头的包才会从这个注册表获取。
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.payment.apple": "1.0.1"
+  }
+}
+```
+
 
 ## 使用示例
 

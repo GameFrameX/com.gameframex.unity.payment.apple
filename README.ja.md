@@ -33,26 +33,36 @@
 
 ## クイックスタート
 
-### 1. プラグインのインポート
+### インストール
 
-`GameFrameX.Payment.Apple` プラグインを Unity プロジェクトにインポートします。
+Unity プロジェクトの `Packages/manifest.json` を編集し、`scopedRegistries` セクションを追加してください：
 
-### 2. Unity での使用
-
-ゲームシーンに `ApplePaymentManager` コンポーネントを追加するか、コードから動的に作成します：
-
-```csharp
-// ApplePaymentManager インスタンスを取得
-var billingManager = GameFrameX.Payment.PaymentModule.GetPaymentManager<ApplePaymentManager>();
-
-// イベントリスナーを登録
-billingManager.OnInitialized += OnInitialized;
-billingManager.OnProductsQueried += OnProductsQueried;
-billingManager.OnPurchaseCompleted += OnPurchaseCompleted;
-
-// 初期化
-billingManager.Init();
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes` は、どのパッケージをこのレジストリから解決するかを制御します。`com.gameframex` で始まるパッケージのみがこのレジストリから取得されます。
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.payment.apple": "1.0.1"
+  }
+}
+```
+
 
 ## 使用例
 

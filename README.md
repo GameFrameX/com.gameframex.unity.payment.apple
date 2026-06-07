@@ -33,26 +33,36 @@ This plugin provides a simple and easy-to-use API for integrating Apple App Stor
 
 ## Quick Start
 
-### 1. Import Plugin
+### Installation
 
-Import the `GameFrameX.Payment.Apple` plugin into your Unity project.
+Edit your Unity project's `Packages/manifest.json` and add the `scopedRegistries` section:
 
-### 2. Usage
-
-Add the `ApplePaymentManager` component to your game scene, or create it dynamically via code:
-
-```csharp
-// Get ApplePaymentManager instance
-var billingManager = GameFrameX.Payment.PaymentModule.GetPaymentManager<ApplePaymentManager>();
-
-// Register event listeners
-billingManager.OnInitialized += OnInitialized;
-billingManager.OnProductsQueried += OnProductsQueried;
-billingManager.OnPurchaseCompleted += OnPurchaseCompleted;
-
-// Initialize
-billingManager.Init();
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes` controls which packages are resolved through this registry. Only packages whose names start with `com.gameframex` will be fetched from it.
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.payment.apple": "1.0.1"
+  }
+}
+```
+
 
 ## Usage Examples
 
