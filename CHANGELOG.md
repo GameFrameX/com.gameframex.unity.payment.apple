@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.0.1...1.0.2) (2026-07-30)
+
+
+### Bug Fixes
+
+* 更新 package.json 中的依赖版本 ([c23471f](https://github.com/gameframex/com.gameframex.unity.payment.apple/commit/c23471ff0920c72440fe3a42816078e781d72f19))
+
 ## [1.0.1](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.0.0...1.0.1) (2026-06-05)
 
 
