@@ -3,7 +3,7 @@
   "displayName": "Game Frame X Payment Apple",
   "category": "Game Frame X",
   "description": "GameFrameX Payment Apple — Apple App Store in-app purchase channel for GameFrameX Payment, encapsulating StoreKit behind ApplePaymentManager. Provides a simple API to initialize App Store billing, query product details, buy one-time products and subscriptions, consume consumable purchases, and query purchase history. Includes ApplePayStoreKit bindings with ProductInfo, PurchaseInfo and introductory-price models, ApplePurchaseParams for purchase parameters, and IL2CPP cropping protection. Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX Payment Apple — GameFrameX Payment 的 Apple App Store 内购渠道适配包，封装 StoreKit 并由 ApplePaymentManager 提供 API。支持初始化 App Store 计费、查询商品详情、购买一次性商品与订阅、消耗型商品消耗以及查询购买历史。内置含 ProductInfo、PurchaseInfo 与 introductory-price 模型的 ApplePayStoreKit 绑定、ApplePurchaseParams 以及 IL2CPP 裁剪保护。文档：https://gameframex.doc.alianblank.com",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "unity": "2019.4",
   "keywords": [
     "Game Frame X"
