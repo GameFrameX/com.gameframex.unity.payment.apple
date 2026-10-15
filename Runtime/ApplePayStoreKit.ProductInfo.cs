@@ -29,7 +29,6 @@
 
 using System;
 using System.Collections.Generic;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.Payment.Apple.Runtime
 {
@@ -38,56 +37,56 @@ namespace GameFrameX.Payment.Apple.Runtime
     /// 对应iOS StoreKit框架中的SKProduct对象
     /// </summary>
     [Serializable]
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     public sealed class SKProductInfo
     {
         /// <summary>
         /// 产品标识符
         /// 在App Store Connect中配置的唯一商品ID
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string ProductIdentifier { get; set; }
 
         /// <summary>
         /// 本地化标题
         /// 在App Store Connect中配置的商品显示名称（根据用户设备语言显示）
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string LocalizedTitle { get; set; }
 
         /// <summary>
         /// 本地化描述
         /// 在App Store Connect中配置的商品详细描述（根据用户设备语言显示）
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string LocalizedDescription { get; set; }
 
         /// <summary>
         /// 商品价格
         /// 以NSDecimalNumber形式表示的价格，需要结合货币信息使用
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public decimal Price { get; set; }
 
         /// <summary>
         /// 货币代码
         /// ISO 4217标准的三字母货币代码，如"USD"、"CNY"等
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string CurrencyCode { get; set; }
 
         /// <summary>
         /// 货币符号
         /// 本地化的货币符号，如"$"、"¥"等
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string CurrencySymbol { get; set; }
 
         /// <summary>
         /// 地区标识符
         /// 表示价格所属的地区和语言，如"en_US"、"zh_CN"等
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string LocaleIdentifier { get; set; }
 
         /// <summary>
@@ -95,7 +94,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 订阅商品的周期数量，如1表示1个月、3表示3个月等
         /// 仅适用于iOS 11.2+的订阅商品
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int? SubscriptionPeriodNumberOfUnits { get; set; }
 
         /// <summary>
@@ -103,7 +102,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 订阅商品的周期单位：0=天，1=周，2=月，3=年
         /// 仅适用于iOS 11.2+的订阅商品
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int? SubscriptionPeriodUnit { get; set; }
 
         /// <summary>
@@ -111,7 +110,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 订阅商品的试用期或介绍期价格信息
         /// 仅适用于iOS 11.2+的订阅商品
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public SKProductIntroductoryPrice IntroductoryPrice { get; set; }
 
         /// <summary>
@@ -119,7 +118,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 商品的促销折扣信息数组
         /// 仅适用于iOS 12.0+
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public List<SKProductDiscount> Discounts { get; set; }
 
         /// <summary>
@@ -127,7 +126,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 标识订阅商品所属的订阅组，同组内的订阅商品互斥
         /// 仅适用于iOS 12.2+的订阅商品
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string SubscriptionGroupIdentifier { get; set; }
     }
 
@@ -135,7 +134,7 @@ namespace GameFrameX.Payment.Apple.Runtime
     /// iOS SKProductDiscount 商品折扣信息类
     /// 对应iOS StoreKit框架中的SKProductDiscount对象
     /// </summary>
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     [Serializable]
     public sealed class SKProductDiscount
     {
@@ -143,49 +142,49 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 折扣价格
         /// 促销活动的折扣价格
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public decimal Price { get; set; }
 
         /// <summary>
         /// 货币代码
         /// ISO 4217标准的三字母货币代码
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string CurrencyCode { get; set; }
 
         /// <summary>
         /// 折扣标识符
         /// 在App Store Connect中配置的折扣活动标识符
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string Identifier { get; set; }
 
         /// <summary>
         /// 支付模式
         /// 0=免费试用，1=按期付费，2=预付费
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int PaymentMode { get; set; }
 
         /// <summary>
         /// 周期数量
         /// 折扣价格持续的周期数
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int NumberOfPeriods { get; set; }
 
         /// <summary>
         /// 订阅周期单位数
         /// 折扣周期的单位数量
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int? SubscriptionPeriodNumberOfUnits { get; set; }
 
         /// <summary>
         /// 订阅周期单位类型
         /// 折扣周期的单位类型：0=天，1=周，2=月，3=年
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int? SubscriptionPeriodUnit { get; set; }
     }
 
@@ -193,50 +192,50 @@ namespace GameFrameX.Payment.Apple.Runtime
     /// 订阅周期单位枚举
     /// 对应iOS StoreKit中的SKProduct.PeriodUnit
     /// </summary>
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     public enum SKSubscriptionPeriodUnit
     {
         /// <summary>
         /// 天
         /// </summary>
-        [Preserve] Day = 0,
+        [UnityEngine.Scripting.Preserve] Day = 0,
 
         /// <summary>
         /// 周
         /// </summary>
-        [Preserve] Week = 1,
+        [UnityEngine.Scripting.Preserve] Week = 1,
 
         /// <summary>
         /// 月
         /// </summary>
-        [Preserve] Month = 2,
+        [UnityEngine.Scripting.Preserve] Month = 2,
 
         /// <summary>
         /// 年
         /// </summary>
-        [Preserve] Year = 3
+        [UnityEngine.Scripting.Preserve] Year = 3
     }
 
     /// <summary>
     /// 支付模式枚举
     /// 对应iOS StoreKit中的SKProductDiscount.PaymentMode
     /// </summary>
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     public enum SKPaymentMode
     {
         /// <summary>
         /// 免费试用
         /// </summary>
-        [Preserve] FreeTrial = 0,
+        [UnityEngine.Scripting.Preserve] FreeTrial = 0,
 
         /// <summary>
         /// 按期付费
         /// </summary>
-        [Preserve] PayAsYouGo = 1,
+        [UnityEngine.Scripting.Preserve] PayAsYouGo = 1,
 
         /// <summary>
         /// 预付费
         /// </summary>
-        [Preserve] PayUpFront = 2
+        [UnityEngine.Scripting.Preserve] PayUpFront = 2
     }
 }

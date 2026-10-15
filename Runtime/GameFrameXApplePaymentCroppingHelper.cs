@@ -28,14 +28,13 @@
 //  ==========================================================================================
 
 using UnityEngine;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.Payment.Apple.Runtime
 {
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     public class GameFrameXApplePaymentCroppingHelper : MonoBehaviour
     {
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         void Start()
         {
             _ = typeof(GameFrameX.Payment.Apple.Runtime.ApplePaymentManager);

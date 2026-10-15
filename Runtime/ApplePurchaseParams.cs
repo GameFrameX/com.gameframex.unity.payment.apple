@@ -39,13 +39,16 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// <summary>
         /// 订阅优惠令牌
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public string OfferToken { get; set; }
 
         /// <summary>
         /// 自定义数据（对应 StoreKit 的 applicationUsername）
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public string CustomData { get; set; }
 
+        [UnityEngine.Scripting.Preserve]
         public ApplePurchaseParams(string productId, string orderId, PaymentProductType productType)
             : base(productId, orderId, productType)
         {

@@ -31,7 +31,6 @@ using System;
 using System.Collections.Generic;
 using GameFrameX.Runtime;
 using UnityEngine;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.Payment.Apple.Runtime
 {
@@ -40,52 +39,52 @@ namespace GameFrameX.Payment.Apple.Runtime
         #region 消息代码
 
         // 初始化相关
-        [Preserve] private const int InitSuccess = 1000;
-        [Preserve] private const int InitFail = 1001;
+        [UnityEngine.Scripting.Preserve] private const int InitSuccess = 1000;
+        [UnityEngine.Scripting.Preserve] private const int InitFail = 1001;
 
         // 查询商品相关
-        [Preserve] private const int QueryProductsSuccess = 2000;
-        [Preserve] private const int QueryProductsFail = 2001;
+        [UnityEngine.Scripting.Preserve] private const int QueryProductsSuccess = 2000;
+        [UnityEngine.Scripting.Preserve] private const int QueryProductsFail = 2001;
 
         // 购买相关
-        [Preserve] private const int PurchaseSuccess = 3000;
-        [Preserve] private const int PurchaseFail = 3001;
+        [UnityEngine.Scripting.Preserve] private const int PurchaseSuccess = 3000;
+        [UnityEngine.Scripting.Preserve] private const int PurchaseFail = 3001;
 
-        [Preserve] private const int PurchaseCancel = 3002;
+        [UnityEngine.Scripting.Preserve] private const int PurchaseCancel = 3002;
 
         // 购买检查
-        [Preserve] private const int PurchaseCheckSuccess = 3100;
-        [Preserve] private const int PurchaseCheckFail = 3101;
+        [UnityEngine.Scripting.Preserve] private const int PurchaseCheckSuccess = 3100;
+        [UnityEngine.Scripting.Preserve] private const int PurchaseCheckFail = 3101;
 
         // 消耗相关
-        [Preserve] private const int ConsumeSuccess = 4000;
-        [Preserve] private const int ConsumeFail = 4001;
+        [UnityEngine.Scripting.Preserve] private const int ConsumeSuccess = 4000;
+        [UnityEngine.Scripting.Preserve] private const int ConsumeFail = 4001;
 
         // 查询购买历史相关
-        [Preserve] private const int QueryPurchasesSuccess = 5000;
-        [Preserve] private const int QueryPurchasesFail = 5001;
+        [UnityEngine.Scripting.Preserve] private const int QueryPurchasesSuccess = 5000;
+        [UnityEngine.Scripting.Preserve] private const int QueryPurchasesFail = 5001;
 
         #endregion
 
         #region 事件定义
 
         // 初始化事件
-        [Preserve] public event Action<bool, string> OnInitialized;
+        [UnityEngine.Scripting.Preserve] public event Action<bool, string> OnInitialized;
 
         // 查询商品事件
-        [Preserve] public event Action<bool, List<SKProductInfo>> OnProductsQueried;
+        [UnityEngine.Scripting.Preserve] public event Action<bool, List<SKProductInfo>> OnProductsQueried;
 
         // 购买事件
-        [Preserve] public event Action<bool, PurchaseInfo> OnPurchaseCompleted;
-        [Preserve] public event Action OnPurchaseCancelled;
+        [UnityEngine.Scripting.Preserve] public event Action<bool, PurchaseInfo> OnPurchaseCompleted;
+        [UnityEngine.Scripting.Preserve] public event Action OnPurchaseCancelled;
 
         // 消耗事件
-        [Preserve] public event Action<bool, string> OnPurchaseConsumed;
+        [UnityEngine.Scripting.Preserve] public event Action<bool, string> OnPurchaseConsumed;
         // 购买验证
-        [Preserve] public event Action<bool, string> OnPurchaseCheck;
+        [UnityEngine.Scripting.Preserve] public event Action<bool, string> OnPurchaseCheck;
 
         // 查询购买历史事件
-        [Preserve] public event Action<bool, List<PurchaseInfo>> OnPurchasesQueried;
+        [UnityEngine.Scripting.Preserve] public event Action<bool, List<PurchaseInfo>> OnPurchasesQueried;
 
         #endregion
 
@@ -97,7 +96,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 此方法由 iOS 原生端通过 UnitySendMessage 调用
         /// </summary>
         /// <param name="message">消息内容，格式为 "消息代码|消息内容"</param>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public void OnMessage(string message)
         {
             Debug.Log("收到来自 iOS 的消息: " + message);

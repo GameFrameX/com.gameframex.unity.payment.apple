@@ -28,7 +28,6 @@
 //  ==========================================================================================
 
 using System;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.Payment.Apple.Runtime
 {
@@ -37,49 +36,49 @@ namespace GameFrameX.Payment.Apple.Runtime
     /// 对应iOS StoreKit框架中的SKProductDiscount对象（用于介绍价格）
     /// </summary>
     [Serializable]
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     public sealed class SKProductIntroductoryPrice
     {
         /// <summary>
         /// 介绍价格
         /// 试用期或介绍期的价格
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public decimal Price { get; set; }
 
         /// <summary>
         /// 货币代码
         /// ISO 4217标准的三字母货币代码
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string CurrencyCode { get; set; }
 
         /// <summary>
         /// 支付模式
         /// 0=免费试用，1=按期付费，2=预付费
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int PaymentMode { get; set; }
 
         /// <summary>
         /// 周期数量
         /// 介绍价格持续的周期数
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int NumberOfPeriods { get; set; }
 
         /// <summary>
         /// 订阅周期单位数
         /// 介绍价格周期的单位数量
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int? SubscriptionPeriodNumberOfUnits { get; set; }
 
         /// <summary>
         /// 订阅周期单位类型
         /// 介绍价格周期的单位类型：0=天，1=周，2=月，3=年
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public int? SubscriptionPeriodUnit { get; set; }
     }
 }

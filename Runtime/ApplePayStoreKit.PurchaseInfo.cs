@@ -28,7 +28,6 @@
 //  ==========================================================================================
 
 using System;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.Payment.Apple.Runtime
 {
@@ -36,19 +35,19 @@ namespace GameFrameX.Payment.Apple.Runtime
     /// 购买信息
     /// </summary>
     [Serializable]
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     public sealed class PurchaseInfo
     {
         /// <summary>
         /// 商品ID
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string ProductId { get; set; }
 
         /// <summary>
         /// 购买凭证
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string Receipt { get; set; }
     }
 }

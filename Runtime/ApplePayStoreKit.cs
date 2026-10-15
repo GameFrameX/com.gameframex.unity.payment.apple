@@ -98,6 +98,7 @@ namespace GameFrameX.Payment.Apple.Runtime
 
         private static ApplePayStoreKit _instance;
 
+        [UnityEngine.Scripting.Preserve]
         public static ApplePayStoreKit Instance
         {
             get
@@ -121,6 +122,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// </summary>
         /// <param name="inAppProductIds">一次性商品ID数组</param>
         /// <param name="subsProductIds">订阅商品ID数组</param>
+        [UnityEngine.Scripting.Preserve]
         public void SetPredefinedProductIds(List<string> inAppProductIds, List<string> subsProductIds)
         {
 #if UNITY_IOS && !UNITY_EDITOR
@@ -170,6 +172,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// <param name="obfuscatedAccountId">混淆的账户ID，用于标识购买用户的账户</param>
         /// <param name="offerToken">订阅优惠令牌（仅订阅商品需要）</param>
         /// <param name="obfuscatedProfileId">混淆的配置文件ID，用于标识购买用户的配置文件</param>
+        [UnityEngine.Scripting.Preserve]
         public void PurchaseWithAllParams(string productId, string productType, string obfuscatedAccountId, string offerToken, string obfuscatedProfileId)
         {
 #if UNITY_IOS && !UNITY_EDITOR
@@ -217,6 +220,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 检查支付系统是否就绪
         /// </summary>
         /// <returns>如果就绪返回true，否则返回false</returns>
+        [UnityEngine.Scripting.Preserve]
         public bool IsReady()
         {
 #if UNITY_IOS && !UNITY_EDITOR
@@ -242,6 +246,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 消耗购买
         /// </summary>
         /// <param name="purchaseToken">购买令牌</param>
+        [UnityEngine.Scripting.Preserve]
         public void ConsumePurchase(string purchaseToken)
         {
 #if UNITY_IOS && !UNITY_EDITOR
@@ -269,6 +274,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// 查询购买记录
         /// </summary>
         /// <param name="productType">产品类型，inapp/subs</param>
+        [UnityEngine.Scripting.Preserve]
         public void QueryPurchases(string productType)
         {
 #if UNITY_IOS && !UNITY_EDITOR
@@ -290,6 +296,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         /// </summary>
         /// <param name="isDebug">是否是沙盒模式</param>
         /// <param name="isClientVerify"></param>
+        [UnityEngine.Scripting.Preserve]
         public void Initialize(bool isDebug, bool isClientVerify)
         {
 #if UNITY_IOS && !UNITY_EDITOR
