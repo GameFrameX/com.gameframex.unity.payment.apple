@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.0.3...1.1.0) (2026-10-16)
+
+
+### Features
+
+* **apple:** 接入支付渠道注册表自注册 ([72a6830](https://github.com/gameframex/com.gameframex.unity.payment.apple/commit/72a68300817f5d6d66b211da9f5234824ba2b6d8))
+
 ## [1.0.3](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.0.2...1.0.3) (2026-10-15)
 
 
