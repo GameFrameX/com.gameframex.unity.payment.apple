@@ -52,6 +52,7 @@ namespace GameFrameX.Payment.Apple.Runtime
         public ApplePurchaseParams(string productId, string orderId, PaymentProductType productType)
             : base(productId, orderId, productType)
         {
+            ChannelId = ApplePaymentManager.ChannelId;
         }
     }
 }

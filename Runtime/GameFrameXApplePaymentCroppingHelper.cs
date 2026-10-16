@@ -47,6 +47,9 @@ namespace GameFrameX.Payment.Apple.Runtime
             _ = typeof(GameFrameX.Payment.Apple.Runtime.SKProductInfo);
             _ = typeof(GameFrameX.Payment.Apple.Runtime.SKProductIntroductoryPrice);
             _ = typeof(GameFrameX.Payment.Apple.Runtime.SKSubscriptionPeriodUnit);
+#if UNITY_IOS && !UNITY_EDITOR
+            _ = typeof(ApplePaymentBootstrap);
+#endif
         }
     }
 }

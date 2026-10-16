@@ -36,6 +36,13 @@ namespace GameFrameX.Payment.Apple.Runtime
     [UnityEngine.Scripting.Preserve]
     public sealed class ApplePaymentManager : BasePaymentManager
     {
+
+        /// <summary>
+        /// App Store 渠道唯一标识
+        /// </summary>
+        [UnityEngine.Scripting.Preserve]
+        public const string ChannelId = "apple";
+
         private static string ToProductTypeString(PaymentProductType productType)
         {
             return productType == PaymentProductType.Subs ? "subs" : "inapp";
