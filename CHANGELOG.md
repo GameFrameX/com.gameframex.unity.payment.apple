@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.1.0...1.1.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **payment.apple:** 添加完整 link.xml 防代码裁剪保护 ([e5e3bcc](https://github.com/gameframex/com.gameframex.unity.payment.apple/commit/e5e3bcc13d82b73aec588f9e0b9511a0e16ad532))
+
 # [1.1.0](https://github.com/gameframex/com.gameframex.unity.payment.apple/compare/1.0.3...1.1.0) (2026-10-16)
 
 
